@@ -1,0 +1,3 @@
+Paul,42,4.50
+Anne,25,5.40
+John Travolta,65,3.50
