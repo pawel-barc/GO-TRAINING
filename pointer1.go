@@ -37,15 +37,48 @@ import "fmt"
 // 	fmt.Println("The result is: ", num)
 // }
 
-func deposit(b *float64, amount float64) {
-	amount = 50
-	*b = *b + amount
+// func deposit(b *float64, amount float64) {
+// 	amount = 50
+// 	*b = *b + amount
+// }
+
+// func main() {
+// 	var balance float64
+// 	balance = 100
+// 	deposit(&balance, 50)
+// 	fmt.Println("The result is: ", balance)
+
+// }
+
+// func main() {
+// 	x := 10
+// 	p := &x
+// 	pp := &p
+
+// 	fmt.Println("value x:", x)
+// 	fmt.Println("Address x:", p)
+// 	fmt.Println("Address p:", pp)
+// 	fmt.Println("*p:", *p)
+// 	fmt.Println("**pp:", **pp)
+
+// 	**pp = 45
+
+// 	fmt.Println("value x after modification: ", x)
+// }
+
+type Book struct {
+	Title string
+	Pages int
 }
 
 func main() {
-	var balance float64
-	balance = 100
-	deposit(&balance, 50)
-	fmt.Println("The result is: ", balance)
+	b := Book{Title: "Dune", Pages: 500}
+	pb := &b
+	fmt.Println("Title:", pb.Title)
+	fmt.Printf("address of b: %p\n", pb)
 
+	pb.Pages = 411
+
+	fmt.Println("Pages after modif: ", b.Pages)
 }
+
